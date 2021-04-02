@@ -44,23 +44,23 @@ function() {
 	
 });
 
-document.querySelector("#slider").addEventListener("click",
-function(){
+document.querySelector("#slider").addEventListener("click",function(){
 	console.log("Changing Volume")
-	console(this.value)
+	console.log(this.value)
 	video.volume=this.value/100
 	document.querySelector('#volume').innerHTML=video.volume*100+"%"
-})
+});
 
 
 document.querySelector('#skip').addEventListener("click", function(){
 	console.log("Skipping Ahead")
-	video.play()
-	video.currentTime+=15;
-	if(video.currentTime> video.duration){
-		video.currentTime= 0 
+	if (video.currentTime +15> video.duration){
+		video.currentTime=0;
 	}
-	console.log(video.currentTime);
+
+	else{
+		video.currentTime+=15
+	}
 	});
 
 
